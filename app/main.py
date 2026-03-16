@@ -10,7 +10,8 @@ def read_root():
 
 #TODO Fix recitation hours to be correct for this semester.
 RECITATION_HOURS = {"a": "09:00~09:50", "b": "10:00~10:50",
-                    "c": "11:00~11:50", "d": "12:00~12:50"}
+                    "c": "11:00~11:50", "d": "12:00~12:50",
+                    "e": "1:00~2:00", "f": "2:00~3:00"}
 MICROSERVICE_LINK = "http://17313-teachers.s3d.cmu.edu:8080/section_info/"
 
 
@@ -35,7 +36,7 @@ def get_section_info(section_id: str):
 
 
     # TODO Fix this to return correct values for correct sections.
-    if section_id == "b" or section_id == "a" or section_id == "d" or section_id == 'c':
+    if section_id in RECITATION_HOURS:
         return {
             "section": section_id,
             "start_time": start_time,
